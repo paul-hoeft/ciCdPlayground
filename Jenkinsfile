@@ -21,15 +21,15 @@ pipeline {
             steps {
                 sh 'yarn test'
             }
+            junit '**/reports/**/*.xml'
         }
 
         stage('integration-test') {
             steps {
                 sh 'yarn test:e2e'
             }
+            junit '**/reports/**/*.xml'
         }
-
-        junit '**/reports/**/*.xml'
 
         stage('deploy') {
             steps {

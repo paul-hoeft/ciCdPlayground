@@ -26,6 +26,13 @@ jobs:
       run: yarn
     - name: Unit tests
       run: yarn test
+    - name: Test Report
+        uses: dorny/test-reporter@v3
+        if: ${{ !cancelled() }}     
+        with:
+          name: JEST Tests            
+          path: reports/**.xml        
+          reporter: jest-junit       
     - name: Build
       run: yarn build
     - name: Integration tests

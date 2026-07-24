@@ -2,13 +2,6 @@ name: Tag Commit
 
 on: 
   workflow_dispatch:
-  
-permissions:
-  checks: write
-  pull-requests: write
-  id-token: write
-  contents: read
-  pages: write
 
 jobs:
   tag:
